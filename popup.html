@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { width: 250px; padding: 15px; font-family: Arial; }
+        h2 { text-align: center; color: #4a5568; margin-top: 0; }
+        button { width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+        #startBtn { background: linear-gradient(135deg, #4CAF50, #2E7D32); color: white; }
+        #stopBtn { background: linear-gradient(135deg, #f44336, #c62828); color: white; }
+        .status { padding: 10px; text-align: center; border-radius: 5px; margin: 15px 0; font-weight: bold; }
+        .running { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .stopped { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .auto-start { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
+        .switch { position: relative; display: inline-block; width: 50px; height: 24px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 24px; }
+        .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: #4CAF50; }
+        input:checked + .slider:before { transform: translateX(26px); }
+    </style>
+</head>
+<body>
+    <h2>🍪 Cookie Auto</h2>
+    <div id="status" class="status stopped">Остановлен</div>
+    <button id="startBtn">▶ СТАРТ</button>
+    <button id="stopBtn">⏹ СТОП</button>
+    
+    <div class="auto-start">
+        <span>Автостарт при загрузке:</span>
+        <label class="switch">
+            <input type="checkbox" id="autoStart">
+            <span class="slider"></span>
+        </label>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
